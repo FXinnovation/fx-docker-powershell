@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e -x
+
+chmod +x /opt/microsoft/powershell/6/pwsh
+
+adduser -D powershell
+
+mkdir -p /data || true
+
+chown powershell:powershell /data
