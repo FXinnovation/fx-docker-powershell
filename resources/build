@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e -x
+
+addgroup powershell
+adduser -D powershell -G powershell
