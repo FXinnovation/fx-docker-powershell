@@ -8,11 +8,12 @@ ADD ./resources /resources
 
 RUN /resources/build && rm -rf /resources
 
+USER powershell
+
 VOLUME /data
 
 WORKDIR /data
 
-USER powershell
 
 ENTRYPOINT ["pwsh"]
 

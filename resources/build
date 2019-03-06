@@ -1,5 +1,11 @@
 #!/bin/sh
 set -e -x
 
+chmod +x /opt/microsoft/powershell/6/pwsh
+
 addgroup powershell
 adduser -D powershell -G powershell
+
+mkdir -p /data || true
+
+chown powershell:powershell /data
