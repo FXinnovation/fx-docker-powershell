@@ -10,3 +10,7 @@ mkdir -p /data || true
 chown powershell:powershell /data
 
 pwsh -Command Install-Module Az -RequiredVersion 1.4.0 -Force
+
+# CIS Benchmarking
+touch /etc/login.defs
+chmod 0444 /etc/login.defs
