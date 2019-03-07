@@ -8,3 +8,5 @@ adduser -D powershell
 mkdir -p /data || true
 
 chown powershell:powershell /data
+
+pwsh -Command Install-Module Az -Force
