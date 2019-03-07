@@ -15,4 +15,4 @@ pwsh -Command Install-Module Az -RequiredVersion 1.4.0 -Force
 touch /etc/login.defs
 chmod 0444 /etc/login.defs
 
-chmod /etc/shadow 0600
+chmod 0600 /etc/shadow
