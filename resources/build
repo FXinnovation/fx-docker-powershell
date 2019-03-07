@@ -9,4 +9,4 @@ mkdir -p /data || true
 
 chown powershell:powershell /data
 
-pwsh -Command Install-Module Az -Force
+pwsh -Command Install-Module Az -RequiredVersion 1.4.0 -Force
