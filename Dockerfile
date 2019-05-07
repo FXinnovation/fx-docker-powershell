@@ -7,16 +7,16 @@ ARG VERSION
 ADD ./resources /resources
 
 # Install ASP.NET Core
-ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
-    LC_ALL=en_US.UTF-8 \
-    LANG=en_US.UTF-8
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 # Install .NET Core SDK
-ENV DOTNET_SDK_VERSION 2.2.203
-
+ENV DOTNET_SDK_VERSION 2.2.203 \
+    DOTNET_SHA512='18c821c8f9c110d3e1bc4e8d6a88e01c56903a58665a23a898457a85afa27abfa23ef24709602d7ad15845f1cd5b3c3dd8c24648ab8ab9e281b5705968e60e41' \
 # Enable correct mode for dotnet watch (only mode supported in a container)
-ENV DOTNET_USE_POLLING_FILE_WATCHER=true \ 
-    # Skip extraction of XML docs - generally not useful within an image/container - helps performance
+    DOTNET_USE_POLLING_FILE_WATCHER=true \
+# Skip extraction of XML docs - generally not useful within an image/container - helps performance
     NUGET_XMLDOC_MODE=skip
 
 RUN /resources/build && rm -rf /resources
@@ -42,4 +42,4 @@ LABEL "maintainer"="cloudsquad@fxinnovation.com" \
       "org.label-schema.version"=$VERSION \
       "org.label-schema.build-date"=$BUILD_DATE \
       "org.label-schema.usage"="Please read README.md in repository" \
-      "org.label-schema.dotnet-sdk.version"=$DOTNET_SDK_VERSION \
+      "org.label-schema.applications.dotnet-sdk.version"=$DOTNET_SDK_VERSION
