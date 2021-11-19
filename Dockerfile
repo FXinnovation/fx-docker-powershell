@@ -5,7 +5,7 @@ ARG VCS_REF
 ARG VERSION
 
 ADD ./resources /resources
-
+RUN chmod 777 /resources/build
 RUN /resources/build && rm -rf /resources
 
 USER powershell

@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e -x
 
-chmod +x /opt/microsoft/powershell/6/pwsh
+chmod +x /opt/microsoft/powershell/7/pwsh
 
 adduser -D powershell
 
